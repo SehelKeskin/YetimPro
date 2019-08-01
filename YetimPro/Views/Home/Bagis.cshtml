@@ -1,0 +1,99 @@
+﻿@model YetimPro.Models.BagisSinif
+
+@{
+    ViewBag.Title = "Bagis";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="hero-wrap hero-bread" style="background-image: url('/Content/images/bagisbanner1.png');">
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+
+        </div>
+    </div>
+</div>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="row">
+
+        <div class="col-md-6 offset-md-3">
+
+            <!-- Material form subscription -->
+            <div class="card">
+
+                <h5 class="card-header info-color white-text text-center py-4">
+                    <strong>Bağış Sayfamıza Hoşgeldin.</strong>
+                </h5>
+
+                <!--Card content-->
+                <div class="card-body px-lg-5">
+
+                    <!-- Form -->
+                    @*<form class="text-center" style="color: #757575;" action="#!">*@
+
+                    <p>Bağış bilgilerinizi yazın, size dönüş yapalım.</p>
+                    
+                    
+
+
+                    <!-- Name -->
+                    <div class="md-form mt-3">
+                        @Html.LabelFor(model => model.Tur, htmlAttributes: new { @class = "control-label" })
+                        @Html.EnumDropDownListFor(model => model.Tur,"Seçiniz", htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Tur, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="md-form mt-3">
+                        @Html.LabelFor(model => model.Ad, htmlAttributes: new { @class = "control-label" })
+                        @Html.TextBoxFor(model => model.Ad, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Ad, "", new { @class = "text-danger" })
+                    </div>
+
+
+                    <div class="md-form mt-3">
+                        @Html.LabelFor(model => model.Soyad, htmlAttributes: new { @class = "control-label" })
+                        @Html.TextBoxFor(model => model.Soyad, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Soyad, "", new { @class = "text-danger" })
+                    </div>
+
+
+                    <div class="md-form mt-3">
+                        @Html.LabelFor(model => model.Tel, htmlAttributes: new { @class = "control-label" })
+                        @Html.TextBoxFor(model => model.Tel, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Tel, "", new { @class = "text-danger" })
+                    </div>
+                    <!-- E-mai -->
+                    <div class="md-form">
+                        @Html.LabelFor(model => model.Mail, htmlAttributes: new { @class = "control-label" })
+                        @Html.TextBoxFor(model => model.Mail, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Mail, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="md-form">
+                        @Html.LabelFor(model => model.Mesaj, htmlAttributes: new { @class = "control-label" })
+                        @Html.TextAreaFor(model => model.Mesaj, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Mesaj, "", new { @class = "text-danger" })
+                    </div>
+                    <!-- Sign in button -->
+                    <button class="btn btn-outline-info btn-rounded btn-block z-depth-0 my-4 waves-effect" type="submit">Bağış</button>
+
+                    @*</form>*@
+
+
+                    <!-- Form -->
+
+                </div>
+            </div>
+        </div>
+        <!-- Material form subscription -->
+
+    </div>      }
+@*@section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }*@

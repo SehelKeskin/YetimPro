@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29001.49
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YetimPro", "YetimPro\YetimPro.csproj", "{086FE674-17D2-4C3C-9835-D548BA704E7E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{086FE674-17D2-4C3C-9835-D548BA704E7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{086FE674-17D2-4C3C-9835-D548BA704E7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{086FE674-17D2-4C3C-9835-D548BA704E7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{086FE674-17D2-4C3C-9835-D548BA704E7E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {630036FE-6DA2-4CE7-99A9-F5943E095120}
+	EndGlobalSection
+EndGlobal

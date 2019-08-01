@@ -1,0 +1,96 @@
+﻿@model IEnumerable<YetimPro.Models.Haber>
+@{
+    ViewBag.Title = "Blog";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="hero-wrap hero-bread" style="background-image: url('/Content/images/blogban.jpg');">
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+
+        </div>
+    </div>
+</div>
+<section class="ftco-section ftco-degree-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 order-lg-last ftco-animate">
+                <div class="row">
+                    @*<div class="col-md-12 d-flex ftco-animate">
+                        <div class="blog-entry align-self-stretch d-md-flex">
+                            <a href="blog-single.html" class="block-20" style="background-image: url('/Content/images/kisi1.jpg');">
+                            </a>
+                            <div class="text d-block pl-md-4">
+                                <div class="meta mb-3">
+                                    <div><a href="#">Temmuz 7, 2019</a></div>
+                                    <div><a href="#">Kanoute</a></div>
+                                </div>
+                                <h3 class="heading"><a href="#">Ünlü futbol yıldızı hayatını kendisi gibi yetim büyüyen çocuklara adadı.</a></h3>
+                                <p>Türkiye Diyanet Vakfı (TDV) Uluslararası İyilik Ödülü’ne layık görülen Mali asıllı 42 yaşındaki dünyaca ünlü eski futbolcu Frederic Omar Kanoute, kendi adına kurduğu vakıf aracılığıyla hayatını kendisi gibi yetim çocukların bakımına adadı.</p>
+                                <p><a href="@Url.Action("Kisi1","Home")" class="btn btn-primary py-2 px-3">Devamını Oku</a></p>
+                            </div>
+                        </div>
+
+                    </div>*@
+                    @*<div class="col-md-12 d-flex ftco-animate">
+                        <div class="blog-entry align-self-stretch d-md-flex">
+                            <a href="blog-single.html" class="block-20" style="background-image: url('/Content/images/kisi2.jpg');">
+                            </a>
+                            <div class="text d-block pl-md-4">
+                                <div class="meta mb-3">
+                                    <div><a href="#">Temmuz 19, 2019</a></div>
+                                    <div><a href="#">Badou Jack</a></div>
+                                </div>
+                                <h3 class="heading"><a href="#">Gambiya asıllı İsveçli boks şampiyonu Badou Jack, Dubai’de amacı, yetimlere Ramazan boyu maddi-manevi ikramlarda bulunmak olan bir vakıf kurdu.</a></h3>
+                                <p>
+                                    “Vakıf faaliyetlerimizi şu slogan ile duyuruyoruz:
+
+                                    “ÇOCUKLARIMIZA BİR MÜCADELE ŞANSI  TANIMAK İÇİN DÜNYANIN HER NERESİNDE OLURSA OLSUN BAŞTA YETİMLER OLMAK ÜZERE İHTİYACI OLAN HERKESE KİTAP,GIDA VE DİĞER YARDIMLARI ULAŞTIRMAYA GAYRET EDİYORUZ.”
+
+                                    açıklamasına, 30 Mayıs’ta, The National gazetesinde yer verildi.
+
+                                </p>
+                                <p><a href="@Url.Action("Kisi2","Home")" class="btn btn-primary py-2 px-3">Devamını Oku</a></p>
+                            </div>
+                        </div>
+                    </div>*@
+
+
+                    @foreach (var item in Model)
+                    {
+
+
+                <div class="col-md-12 d-flex ftco-animate">
+                    <div class="blog-entry align-self-stretch d-md-flex">
+                        <a href="blog-single.html" class="block-20" style="background-image: url('/Content/images/@item.Foto');">
+                        </a>
+                        <div class="text d-block pl-md-4">
+                            <div class="meta mb-3">
+                                <div><a href="#">@item.Tarih</a></div>
+                                <div><a href="#">@item.Ad</a></div>
+                            </div>
+                            <h3 class="heading"><a href="#">@item.Baslik</a></h3>
+                            <p>
+                              @item.Gövde
+
+                            </p>
+                            <p><a href="@Url.Action(@item.Sayfa, "Home")" class="btn btn-primary py-2 px-3">Devamını Oku</a></p>
+                        </div>
+                    </div>
+
+                  
+                </div> <!-- .col-md-8 -->
+
+
+
+                    }
+
+                </div>
+
+        </div>
+   
+       </div> 
+ </div>
+</section> <!-- .section -->
+
+
+

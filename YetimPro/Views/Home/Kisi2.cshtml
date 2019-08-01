@@ -1,0 +1,111 @@
+﻿@model IEnumerable<YetimPro.Models.Comment>
+
+@{
+    ViewBag.Title = "Kisi2";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="hero-wrap hero-bread" style="background-image: url('/Content/images/kisi2yeni.jpg');">
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+
+        </div>
+    </div>
+</div>
+
+<section class="ftco-section ftco-degree-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 ftco-animate">
+                <h2 class="mb-3">Ünlü Boksör Kendini Yetim Çocuklara Adadı.</h2>
+                <p>
+                    Gambiya asıllı İsveçli boks şampiyonu Badou Jack, Dubai’de amacı, yetimlere Ramazan boyu maddi-manevi ikramlarda bulunmak olan bir vakıf kurdu.
+
+                    “Vakıf faaliyetlerimizi şu slogan ile duyuruyoruz:
+
+                    “ÇOCUKLARIMIZA BİR MÜCADELE ŞANSI  TANIMAK İÇİN DÜNYANIN HER NERESİNDE OLURSA OLSUN BAŞTA YETİMLER OLMAK ÜZERE İHTİYACI OLAN HERKESE KİTAP,GIDA VE DİĞER YARDIMLARI ULAŞTIRMAYA GAYRET EDİYORUZ.”
+
+                    açıklamasına, 30 Mayıs’ta, The National gazetesinde yer verildi.
+
+                </p>
+                <p>
+
+                </p>
+                <p>
+                    34 yaşındaki sporcu, unvan müsabakalarından fırsat bulduğu zamanlarda, Ürdün’deki Suriyeli mültecilere gıda yardımında bulunuyordu. Ayrıca, kendi Müslüman memleketi Gambiya’daki köylere de kıyafet yardımı yapıyordu.
+
+                    Dahası, Jack, Ürdün’deki Filistinli mülteciler için Al-Baqaa kampının merkezine bir tıp merkezi inşa ettirdi ve içini de yeni tıbbi malzemelerle donattı.
+
+                    Dünya Boks Konseyi (WBC)’nde kendi sikletlerinde şampiyonlukları bulunan profesyonel sporcu, Gambiyalı bir babanın ve İsveçli bir annenin oğlu.
+                </p>
+
+                <p>
+                    “İnsanlara yardım ederek, diğerlerine örnek olma zorunluluğu hissediyorum. Dünyada pek fazla Müslüman boks şampiyonu yok, ben bunlardan biri olmak istiyorum ve ümmetimi en iyi şekilde temsil etmek istiyorum.”
+
+                    “KAZANDIĞIMI İSLAM DÜNYASIYLA PAYLAŞMAK İSTİYORUM. BİR MÜSLÜMAN OLARAK, ALLAH’A İYİ BİR KUL OLMAK İSTİYORSAM, KULLARINA DA FAYDALI OLMAM GEREKTİĞİNE İNANIYORUM.”
+
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="pt-5 mt-5">
+            <h3 class="mb-5 offset-1">Yorumlar</h3>
+            <ul class="comment-list">
+                @foreach (var item in Model)
+                {
+                    <li class="comment">
+                        @if (item.HaberId == 7)
+                        {
+                            <div class="comment-body">
+                                <h3>@item.Ad</h3>
+                                <div class="meta">@item.Tarih</div>
+                                <p>@item.Mesaj</p>
+                                <p></p>
+                            </div>
+                        }
+
+                    </li>
+                }
+            </ul>
+            <!-- END comment-list -->
+        </div>
+    </div>
+</div>
+@using (Html.BeginForm())
+{
+
+
+    <div class="row">
+        <div class="col-md-6 offset-1">
+            <div class="comment-form-wrap pt-5">
+                <h3 class="mb-5">Formu doldurarak, yorum ekleyebilirsiniz.</h3>
+                <form method="post" class="p-5 bg-light">
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input type="text" class="form-control" id="Namee" name="Namee">
+
+                        @*@Html.TextBoxFor(model => model.Ad, new {@class="form-control" })*@
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="Messagee" name="Messagee" cols="30" rows="10" class="form-control"></textarea>
+
+                        @*@Html.TextBoxFor(model => model.Mesaj, new { @class = "form-control" })*@
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Gönder" class="btn py-3 px-4 btn-primary">
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+}

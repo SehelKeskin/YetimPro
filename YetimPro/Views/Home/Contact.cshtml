@@ -1,0 +1,69 @@
+﻿@model YetimPro.Models.Contact
+<div class="hero-wrap hero-bread" style="background-image: url('/Content/images/childrenbanner.jpg');">
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+        </div>
+    </div>
+</div>
+
+<section class="ftco-section contact-section bg-light">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-6">
+
+
+                @using (Html.BeginForm())
+                {
+                    if (!string.IsNullOrEmpty(ViewBag.Error))
+                    {
+                        <div class="alert alert-success">@ViewBag.Error</div>
+                    }
+
+                    if (!string.IsNullOrEmpty(ViewBag.Message))
+                    {
+                        <div class="alert alert-success">@ViewBag.Message</div>
+                    }
+
+                    @Html.ValidationSummary(false)<!--Hata mesajlarınnı göstercez-->
+                    <div class="form-group row">
+                        @Html.TextBoxFor(model => model.Ad, new { @class = "form-control", placeholder = "Adınız" })
+                        @Html.ValidationMessageFor(model => model.Ad, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group row">
+                        @Html.TextBoxFor(model => model.Soyad, new { @class = "form-control", placeholder = "Soyadınız" })
+                        @Html.ValidationMessageFor(model => model.Soyad, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group row">
+                        @Html.TextBoxFor(model => model.Tel, new { @class = "form-control", placeholder = "Telefonunuz" })
+                        @Html.ValidationMessageFor(model => model.Tel, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group row">
+                        @Html.TextBoxFor(model => model.Email, new { @class = "form-control", placeholder = "Email" })
+                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group row">
+                        @Html.TextAreaFor(model => model.Mesaj, new { @class = "form-control", placeholder = "Mesaj" })
+                        @Html.ValidationMessageFor(model => model.Mesaj, "", new { @class = "text-danger" })
+
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-offset-2">
+                            <button type="submit" class="btn btn-primary">  Gönder   </button>
+                        </div>
+                    </div>
+
+                }
+            </div>
+            <div class="col-md-6">
+
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3007.9258211204633!2d28.96827691541597!3d41.07061407929444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab720aaeacecd%3A0x5bd1edb9fd2e0175!2zR8O8cnNlbCwgVGVzdGkgU2suLCAzNDQwMCBLw6LEn8SxdGhhbmUvxLBzdGFuYnVs!5e0!3m2!1str!2str!4v1564318912705!5m2!1str!2str" width="500" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+          
+            </div>
+        </div>
+    </div>
+</section>

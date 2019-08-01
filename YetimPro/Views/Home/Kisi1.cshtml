@@ -1,0 +1,100 @@
+﻿@model IEnumerable<YetimPro.Models.Comment>
+@*@model YetimPro.Models.Comment*@
+@{
+    ViewBag.Title = "Kisi1";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="hero-wrap hero-bread" style="background-image: url('/Content/images/bannerblog.jpg');">
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+
+        </div>
+    </div>
+</div>
+
+<section class="ftco-section ftco-degree-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 ftco-animate">
+                <h2 class="mb-3">Ünlü futbol yıldızı hayatını kendisi gibi yetim büyüyen çocuklara adadı.</h2>
+                <p>Türkiye Diyanet Vakfı (TDV) Uluslararası İyilik Ödülü’ne layık görülen Mali asıllı 42 yaşındaki dünyaca ünlü eski futbolcu Frederic Omar Kanoute, kendi adına kurduğu vakıf aracılığıyla hayatını kendisi gibi yetim çocukların bakımına adadı.</p>
+                <p>
+
+                </p>
+                <p>
+                    Fransa’da doğan, babası gibi yetim büyüyüp 20’li yaşlarda İslam’ı seçen Kanoute, Mali sokaklarında gördüğü fakir çocuklardan etkilenerek yetim merkezi inşa etme hayalini gerçekleştirdi.
+
+                    İspanya’nın Sevilla takımına 2006’da transfer olmadan önce burada mescit olarak kullanılan ve sahibi tarafından boşaltılması istenen bir tesisi satın alıp Müslümanların kullanımına tahsis eden Kanoute, yaptığı çalışmalarla Türkiye Diyanet Vakfının İyilik Ödülü’ne layık görüldü. Kanoute, 13 Mart’ta Cumhurbaşkanı Recep Tayyip Erdoğan’ın katılımıyla Beştepe Millet Kongre ve Kültür Merkezinde düzenlenen programda ödülünü aldı.
+
+                    Kanoute, AA muhabirine yaptığı açıklamada, ailesinde hem Müslüman hem de Hristiyan kişilerin bulunduğunu belirterek İslam’ı seçmenin hayatının dönüm noktası olduğunu söyledi.
+
+                    Müslüman olduktan sonra dünyaya bakış açısı ile insanlarla ilişkisinin değiştiğini aktaran Kanoute, “İslam’ı kabul etmemde en büyük etkenlerinden biri iyilik konusuna verilen önem. İslam’ı kabul ettiğimden beri yardım ve dayanışma faaliyetleri hayatımın bir parçası olarak devam ediyor. Hayatın gayesini düşündürme açısından bu iyilik faaliyetleri önemli bir nokta teşkil ediyor. İslam, sahip olduklarını insanlarla paylaşmayı teşvik ediyor.” diye konuştu.
+                </p>
+                <h2 class="mb-3 mt-5">“Savunmasız ve yetim çocuklara bakılıyor.”</h2>
+                <p>Kanoute, Mali sokaklarında gördüğü fakir çocuklardan etkilenip yetim merkezi inşa etme hayalini gerçekleştirdiğini anlatarak burada savunmasız çocuklar ve kendisi gibi yetim büyüyenlere bakıldığını söyledi.</p>
+            </div>
+        </div>
+    </div>
+</section>
+@using (Html.BeginForm())
+{
+    //@Html.ValidationSummary(false)
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="pt-5 mt-5">
+                <h3 class="mb-5 offset-1">Yorumlar</h3>
+                <ul class="comment-list">
+                    @foreach (var item in Model)
+                    {
+                        <li class="comment">
+                            @if (item.HaberId == 3)
+                            {
+                                <div class="comment-body">
+                                    <h3>@item.Ad</h3>
+                                    <div class="meta">@item.Tarih</div>
+                                    <p>@item.Mesaj</p>
+                                    <p></p>
+                                </div>
+                            }
+
+                        </li>
+                    }
+                </ul>
+                <!-- END comment-list -->
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 offset-1">
+            <div class="comment-form-wrap pt-5">
+                <h3 class="mb-5">Formu doldurarak, yorum ekleyebilirsiniz.</h3>
+                <form method="post" class="p-5 bg-light">
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+
+                        <input type="text" class="form-control" id="Namee" name="Namee">
+
+                        @*@Html.TextBoxFor(model => model.Ad, new {@class="form-control" })*@
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="Messagee" name="Messagee" cols="30" rows="10" class="form-control"></textarea>
+
+                        @*@Html.TextBoxFor(model => model.Mesaj, new { @class = "form-control" })*@
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Gönder" class="btn py-3 px-4 btn-primary">
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+}
+
